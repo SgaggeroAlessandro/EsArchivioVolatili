@@ -12,18 +12,18 @@ namespace EsArchivioVolatili
         private string luogo;
         private string note;
 
-        protected DateTime Data
+        private DateTime Data
         {
             get => data;
             set
             {
-                if (value > DateTime.Now.Date)
+                if (value > DateTime.Today)
                     throw new ArgumentException("La data di avvistamento non è ancora passata. Inserisci una data valida");
                 data = value;
             }
         }
 
-        protected string Luogo
+        private string Luogo
         {
             get => luogo;
             set
@@ -34,7 +34,7 @@ namespace EsArchivioVolatili
             }
         }
 
-        protected string Note
+        private string Note
         {
             get => note;
             set
@@ -54,7 +54,7 @@ namespace EsArchivioVolatili
 
         public string InfoAvvistamento()
         {
-            return $"Data dell'avvistamento: {Data} - Luogo: {Luogo} - Note aggiuntive: {Note}";
+            return $"Data dell'avvistamento: {Data : dd/MM/yyyy} - Luogo: {Luogo} - Note aggiuntive: {Note}\n";
         }
 
     }

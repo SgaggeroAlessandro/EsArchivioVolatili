@@ -15,7 +15,7 @@ namespace EsArchivioVolatili
             get => dieta;
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if (string.IsNullOrWhiteSpace(value))
                     throw new ArgumentException("Inserisci una dieta del rapace valida");
                 dieta = value;
             }

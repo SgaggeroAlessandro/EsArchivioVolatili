@@ -16,7 +16,7 @@ namespace EsArchivioVolatili
 
         public List<CAvvistamento> Avvistamenti;
 
-        protected int CodiceUnivoco
+        public int CodiceUnivoco
         {
             get => codiceunivoco;
             set
@@ -28,7 +28,7 @@ namespace EsArchivioVolatili
         }
 
 
-        protected string Specie
+        public string Specie
         {
             get => specie;
             set
@@ -50,7 +50,7 @@ namespace EsArchivioVolatili
             }
         }
 
-        protected bool Migratore
+        public bool Migratore
         {
             get => migratore;
             set
@@ -82,15 +82,8 @@ namespace EsArchivioVolatili
 
         public virtual string toString()
         {
-            string migrato = "";
-            if(Migratore == true)
-            {
-                migrato = "Sì";
-            }
-            else
-            {
-                migrato = "No";
-            }
+            string migrato = Migratore ? "Sì" : "No";
+            
             return $"Codice del pennuto: {CodiceUnivoco}  - Specie: {Specie} - Habitat: {Habitat} - E' un migratore: {migrato} - Apertura alare (cm): {AperturaAlare}";
         }
 

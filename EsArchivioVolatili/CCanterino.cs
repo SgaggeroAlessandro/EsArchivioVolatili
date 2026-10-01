@@ -15,7 +15,7 @@ namespace EsArchivioVolatili
             get => cantocanterino;
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if (string.IsNullOrWhiteSpace(value))
                     throw new ArgumentException("Inserisci il canto del pennuto");
                 cantocanterino = value;
             }

@@ -22,7 +22,7 @@ namespace EsArchivioVolatili
             get => tipoacquatico;
             set
             {
-                if (string.IsNullOrEmpty(value) || value != TipoAcqua.Dolce.ToString() || value != TipoAcqua.Salata.ToString())
+                if (string.IsNullOrWhiteSpace(value) || (value != TipoAcqua.Dolce.ToString() && value != TipoAcqua.Salata.ToString()))
                     throw new ArgumentException("Puoi scegliere solo tra acqua salata o acqua dolce");
                 tipoacquatico = value;
             }
